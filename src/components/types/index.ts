@@ -15,6 +15,12 @@ export interface Service {
   icon?: string;
 }
 
+export interface Procedure {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
 export interface Testimonial {
   id: string;
   name: string;

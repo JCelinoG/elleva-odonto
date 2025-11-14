@@ -23,34 +23,31 @@ const Header: React.FC = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-white/80 backdrop-blur-sm'
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-3 cursor-pointer"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">E</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-primary-600 leading-5">ELLEVA</span>
-              <span className="text-xs text-gray-500 leading-3">CLÍNICA ODONTOLÓGICA</span>
-            </div>
-          </motion.div>
-
+return (
+  <motion.header
+    initial={{ y: -100 }}
+    animate={{ y: 0 }}
+    transition={{ duration: 0.6 }}
+    className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+        : 'bg-white/80 backdrop-blur-sm'
+    }`}
+  >
+    <div className="container mx-auto px-4">
+      <div className="flex justify-between items-center py-3"> {/* Reduzi o padding */}
+        {/* Logo Atualizada - apenas a imagem */}
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          className="cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <img 
+            src="/images/logo-elleva2.jpeg" 
+            alt="Elleva Clínica Odontológica"
+            className="h-16 w-auto object-contain" /* Ajuste para a nova proporção */
+          />
+        </motion.div>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item, index) => (
