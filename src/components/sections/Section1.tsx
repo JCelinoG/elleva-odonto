@@ -95,6 +95,8 @@ const Section1: React.FC = () => {
                 className="bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary-600 flex items-center space-x-2"
               >
                 <span>Agendar consulta</span>
+                <span className="text-luxury-gold">✦</span>
+
               </motion.button>
               
             </motion.div>

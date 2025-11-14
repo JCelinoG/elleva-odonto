@@ -43,7 +43,7 @@ return (
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <img 
-            src="/images/logo-elleva2.jpeg" 
+            src="/images/logo-elleva2.png" 
             alt="Elleva Clínica Odontológica"
             className="h-16 w-auto object-contain" /* Ajuste para a nova proporção */
           />
