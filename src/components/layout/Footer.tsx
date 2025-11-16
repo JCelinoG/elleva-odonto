@@ -139,9 +139,14 @@ const Footer: React.FC = () => {
               >
                 <span className="text-accent-400 mt-1">📍</span>
                 <div>
-                  <p className="group-hover:text-white transition-colors duration-300">
+                  <a 
+                    href="https://maps.google.com/?q=Quadra ARSO 41, Av. LO-9, 30 - SL.03"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group-hover:text-white transition-colors duration-300 block"
+                  >
                     {footerData.contact.address}
-                  </p>
+                  </a>
                 </div>
               </motion.div>
 

@@ -31,7 +31,7 @@ const Section1: React.FC = () => {
       <div className="absolute top-10 left-10 w-20 h-20 border-l-2 border-t-2 border-primary-400 opacity-30"></div>
       <div className="absolute bottom-10 right-10 w-16 h-16 border-r-2 border-b-2 border-primary-400 opacity-30"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
