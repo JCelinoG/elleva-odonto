@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { footerData, whatsappInfo } from '../data/content';
+import Button from '../ui/Button';
 
 const Footer: React.FC = () => {
   const handleWhatsAppClick = () => {
@@ -30,9 +31,17 @@ const Footer: React.FC = () => {
             className="lg:col-span-1"
           >
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-primary-600 font-bold text-xl">E</span>
-              </div>
+               <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        className="cursor-pointer"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      >
+                        <img 
+                          src="/images/logo-elleva2.png" 
+                          alt="Elleva Clínica Odontológica"
+                          className="h-16 w-auto object-contain" /* Ajuste para a nova proporção */
+                        />
+                      </motion.div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-white leading-5">ELLEVA</span>
                 <span className="text-xs text-primary-200 leading-3">CLÍNICA ODONTOLÓGICA</span>
@@ -165,15 +174,9 @@ const Footer: React.FC = () => {
               </motion.button>
 
               {/* Botão WhatsApp */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleWhatsAppClick}
-                className="w-full bg-accent-500 text-white py-3 rounded-lg font-semibold hover:bg-accent-600 transition-all duration-300 shadow-lg hover:shadow-xl mt-4 flex items-center justify-center space-x-2"
-              >
-                <span>💬</span>
-                <span>Agendar pelo WhatsApp</span>
-              </motion.button>
+             <Button variant="primary">
+                Agendar consulta
+              </Button>
             </div>
           </motion.div>
         </div>

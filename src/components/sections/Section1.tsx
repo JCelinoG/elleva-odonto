@@ -25,7 +25,7 @@ const Section1: React.FC = () => {
  return (
   <section 
     id="areas" 
-    className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 lg:pt-0" 
+    className="min-h-screen flex items-center justify-center relative overflow-hidden pt-32 lg:pt-0"
     style={{ backgroundColor: '#c3c4c4' }}
   >
       <div className="absolute top-10 left-10 w-20 h-20 border-l-2 border-t-2 border-primary-400 opacity-30"></div>
