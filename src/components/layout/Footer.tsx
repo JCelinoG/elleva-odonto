@@ -19,10 +19,8 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gradient-to-br from-primary-700 to-primary-800 text-white">
-      {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo e Descrição */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -37,9 +35,9 @@ const Footer: React.FC = () => {
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       >
                         <img 
-                          src="/images/logo-elleva2.png" 
+                          src="/images/logo-elleva3.jpeg" 
                           alt="Elleva Clínica Odontológica"
-                          className="h-16 w-auto object-contain" /* Ajuste para a nova proporção */
+                          className="h-10 w-auto object-contain" 
                         />
                       </motion.div>
               <div className="flex flex-col">
@@ -51,14 +49,13 @@ const Footer: React.FC = () => {
               Cuidando do seu sorriso com excelência, tecnologia e atendimento humanizado em Palmas.
             </p>
             
-            {/* Redes Sociais */}
             <div className="flex space-x-4">
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 href={footerData.socialMedia.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent-500 transition-colors duration-300"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent-300 transition-colors duration-300"
               >
                 <span className="text-lg">📸</span>
               </motion.a>
@@ -68,7 +65,7 @@ const Footer: React.FC = () => {
                 href={footerData.socialMedia.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent-500 transition-colors duration-300"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent-300 transition-colors duration-300"
               >
                 <span className="text-lg">📘</span>
               </motion.a>*/}
@@ -82,7 +79,6 @@ const Footer: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Links Rápidos */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +99,6 @@ const Footer: React.FC = () => {
                     href={link.href}
                     className="text-primary-200 hover:text-accent-400 transition-colors duration-300 flex items-center space-x-2 group"
                   >
-                    <span className="w-2 h-2 bg-accent-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     <span>{link.name}</span>
                   </a>
                 </motion.li>
@@ -111,7 +106,6 @@ const Footer: React.FC = () => {
             </ul>
           </motion.div>
 
-          {/* Horário de Atendimento */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +125,6 @@ const Footer: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Contato */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +133,6 @@ const Footer: React.FC = () => {
           >
             <h3 className="text-lg font-bold mb-6 text-white">Contato</h3>
             <div className="space-y-4">
-              {/* Endereço */}
               <motion.div
                 whileHover={{ x: 5 }}
                 className="flex items-start space-x-3 text-primary-200 cursor-pointer group"
@@ -153,7 +145,6 @@ const Footer: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* Telefone */}
               <motion.button
                 whileHover={{ x: 5 }}
                 onClick={handlePhoneClick}
@@ -163,7 +154,6 @@ const Footer: React.FC = () => {
                 <span className="group-hover:text-white">{footerData.contact.phone}</span>
               </motion.button>
 
-              {/* Email */}
               <motion.button
                 whileHover={{ x: 5 }}
                 onClick={handleEmailClick}
@@ -173,7 +163,6 @@ const Footer: React.FC = () => {
                 <span className="group-hover:text-white">{footerData.contact.email}</span>
               </motion.button>
 
-              {/* Botão WhatsApp */}
              <Button variant="primary">
                 Agendar consulta
               </Button>
@@ -192,9 +181,10 @@ const Footer: React.FC = () => {
       >
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-primary-300 text-sm">
-              © 2024 Elleva Clínica Odontológica. Todos os direitos reservados.
-            </p>
+          <p className="text-primary-300 text-sm">
+            © {new Date().getFullYear()} Elleva Clínica Odontológica. Todos os direitos reservados.
+          </p>
+            {/*
             <div className="flex space-x-6 text-sm text-primary-300">
               <a href="#" className="hover:text-accent-400 transition-colors duration-300">
                 Política de Privacidade
@@ -202,7 +192,7 @@ const Footer: React.FC = () => {
               <a href="#" className="hover:text-accent-400 transition-colors duration-300">
                 Termos de Uso
               </a>
-            </div>
+            </div>*/}
           </div>
         </div>
       </motion.div>

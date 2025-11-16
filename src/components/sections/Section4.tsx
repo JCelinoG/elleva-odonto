@@ -32,7 +32,7 @@ const Section4: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-600 mb-6">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-500 mb-6">
             {aboutData.title}
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-sans">
@@ -61,7 +61,7 @@ const Section4: React.FC = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h3 className="text-2xl md:text-3xl font-serif font-bold text-center text-primary-600 mb-12">
+          <h3 className="text-2xl md:text-3xl font-serif font-bold text-center text-primary-500 mb-12">
             Nossa Equipe
           </h3>
           
@@ -87,7 +87,7 @@ const Section4: React.FC = () => {
                 <h4 className="text-xl font-serif font-bold text-primary-700 mb-2">
                   {dentist.name}
                 </h4>
-                <p className="text-primary-600 font-semibold mb-4 font-sans">
+                <p className="text-primary-500 font-semibold mb-4 font-sans">
                   {dentist.specialty}
                 </p>
                 <p className="text-gray-600 leading-relaxed font-sans">
@@ -105,7 +105,7 @@ const Section4: React.FC = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h3 className="text-2xl md:text-3xl font-serif font-bold text-center text-primary-600 mb-12">
+          <h3 className="text-2xl md:text-3xl font-serif font-bold text-center text-primary-500 mb-12">
             Nossos Valores
           </h3>
           

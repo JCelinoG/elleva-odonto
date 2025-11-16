@@ -62,11 +62,11 @@ return (
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className="text-gray-700 hover:text-accent-500 transition-colors duration-300 font-medium relative group"
+                className="text-gray-700 hover:text-accent-300 transition-colors duration-300 font-medium relative group"
               >
                 {item.name}
                 <motion.span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-500 group-hover:w-full transition-all duration-300"
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-300 group-hover:w-full transition-all duration-300"
                   initial={{ width: 0 }}
                   whileHover={{ width: '100%' }}
                 />
@@ -124,7 +124,7 @@ return (
                       e.preventDefault();
                       handleNavClick(item.href);
                     }}
-                    className="block py-2 px-4 text-gray-700 hover:text-accent-500 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium"
+                    className="block py-2 px-4 text-gray-700 hover:text-accent-300 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium"
                   >
                     {item.name}
                   </motion.a>
