@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { testimonialsData, whatsappInfo } from '../data/content';
+import Button from '../ui/Button';
 
 const Section3: React.FC = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -186,29 +187,24 @@ const Section3: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold text-primary-700 mb-4">
-            Faça Parte Dessa História
-          </h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Junte-se aos nossos pacientes satisfeitos e descubra a experiência Elleva
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={handleWhatsAppClick}
-            className="bg-accent-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-accent-600 transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Agendar consulta
-          </motion.button>
-        </motion.div>
+    {/* CTA Section Premium */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.3 }}
+  viewport={{ once: true }}
+  className="text-center mt-16"
+>
+  <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary-700 mb-4">
+    Faça Parte Dessa História
+  </h3>
+  <p className="text-gray-600 mb-8 max-w-2xl mx-auto font-sans">
+    Junte-se aos nossos pacientes satisfeitos e descubra a experiência Elleva
+  </p>
+  <Button variant="primary">
+    Agendar consulta
+  </Button>
+</motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { aboutData, whatsappInfo } from '../data/content';
+import Button from '../ui/Button';
 
 const Section4: React.FC = () => {
   const handleWhatsAppClick = () => {
@@ -56,47 +57,51 @@ const Section4: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Nossos Dentistas */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold text-center text-primary-600 mb-12">
-            Nossa Equipe
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {aboutData.dentists.map((dentist, index) => (
-              <motion.div
-                key={dentist.name}
-                custom={index}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center"
-              >
-                {/* Avatar Placeholder */}
-                <div className="w-24 h-24 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                  {dentist.name.split(' ')[1].charAt(0)}
-                </div>
-                
-                <h4 className="text-xl font-bold text-primary-700 mb-2">
-                  {dentist.name}
-                </h4>
-                <p className="text-accent-600 font-semibold mb-4">
-                  {dentist.specialty}
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  {dentist.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+{/* Nossos Dentistas */}
+<motion.div
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="mb-16"
+>
+  <h3 className="text-2xl md:text-3xl font-serif font-bold text-center text-primary-600 mb-12">
+    Nossa Equipe
+  </h3>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    {aboutData.dentists.map((dentist, index) => (
+      <motion.div
+        key={dentist.name}
+        custom={index}
+        variants={cardVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center"
+      >
+        {/* Imagem Real do Dentista */}
+        <div className="w-24 h-24 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden border-4 border-white shadow-lg">
+          <img 
+            src={dentist.image} 
+            alt={dentist.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        <h4 className="text-xl font-serif font-bold text-primary-700 mb-2">
+          {dentist.name}
+        </h4>
+        <p className="text-accent-600 font-semibold mb-4">
+          {dentist.specialty}
+        </p>
+        <p className="text-gray-600 leading-relaxed font-sans">
+          {dentist.description}
+        </p>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
 
         {/* Nossos Valores */}
         <motion.div
@@ -149,18 +154,9 @@ const Section4: React.FC = () => {
           <p className="text-primary-100 mb-8 max-w-2xl mx-auto">
             Agende sua consulta e dê o primeiro passo em direção ao sorriso dos seus sonhos
           </p>
-          <motion.button
-            whileHover={{ 
-              scale: 1.05,
-              backgroundColor: "#ffffff",
-              color: "#2D3748"
-            }}
-            whileTap={{ scale: 0.95 }}
-            onClick={handleWhatsAppClick}
-            className="bg-accent-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-white"
-          >
-            Agendar consulta
-          </motion.button>
+           <Button variant="primary">
+                Agendar consulta
+              </Button>
         </motion.div>
       </div>
     </section>

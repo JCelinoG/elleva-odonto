@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { servicesData, whatsappInfo } from '../data/content';
+import Button from '../ui/Button';
 
 const Section1: React.FC = () => {
   const handleWhatsAppClick = () => {
@@ -168,9 +169,6 @@ const Section1: React.FC = () => {
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-luxury-gold"></div>
                   
                   <div className="mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 text-white font-bold">
-                      {index + 1}
-                    </div>
                     <h3 className="text-xl font-serif font-bold text-primary-700 mb-3 group-hover:text-primary-600 transition-colors duration-300">
                       {service.title}
                     </h3>
@@ -190,15 +188,9 @@ const Section1: React.FC = () => {
               viewport={{ once: true }}
               className="text-center pb-8"
             >
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleWhatsAppClick}
-                className="bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary-600 flex items-center space-x-2 mx-auto"
-              >
-                <span>Agendar consulta</span>
-                <span className="text-luxury-gold">✦</span>
-              </motion.button>
+               <Button variant="primary">
+                Agendar consulta
+              </Button>
             </motion.div>
           </div>
         </motion.div>
