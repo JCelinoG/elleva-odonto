@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navigationItems } from '../data/content';
+import Button from '../ui/Button';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,14 +74,9 @@ return (
             ))}
             
             {/* Botão CTA */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-accent-500 text-white px-6 py-2 rounded-full font-medium hover:bg-accent-600 transition-colors duration-300 shadow-lg hover:shadow-xl"
-              onClick={() => handleNavClick('#contato')}
-            >
-              Agendar Consulta
-            </motion.button>
+              <Button variant="primary" size="md" withIcon={false} center={false}>
+  Agendar Consulta
+</Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -133,15 +129,9 @@ return (
                     {item.name}
                   </motion.a>
                 ))}
-                <motion.button
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navigationItems.length * 0.1 }}
-                  className="w-full mt-4 bg-accent-500 text-white py-3 rounded-lg font-medium hover:bg-accent-600 transition-colors duration-300"
-                  onClick={() => handleNavClick('#contato')}
-                >
-                  Agendar Consulta
-                </motion.button>
+                <Button variant="primary" size="md" withIcon={false} center={false}>
+  Agendar Consulta
+</Button>
               </nav>
             </motion.div>
           )}

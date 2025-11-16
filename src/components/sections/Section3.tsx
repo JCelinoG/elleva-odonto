@@ -23,14 +23,12 @@ const Section3: React.FC = () => {
     );
   };
 
-  // Animação para os cards
   const cardVariants = {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: -50 }
   };
 
-  // Renderizar estrelas baseado na avaliação
   const renderStars = (rating: number) => {
     return (
       <div className="flex space-x-1 mb-3">
@@ -53,7 +51,6 @@ const Section3: React.FC = () => {
   return (
     <section id="depoimentos" className="py-20 bg-gradient-to-br from-primary-50 to-white">
       <div className="container mx-auto px-4">
-        {/* Cabeçalho da Seção */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,15 +58,14 @@ const Section3: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-600 mb-6">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-600 mb-6">
             O que Nossos Pacientes Dizem
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
             Confira as experiências reais de quem já transformou seu sorriso na Elleva
           </p>
         </motion.div>
 
-        {/* Carrossel de Depoimentos - Desktop */}
         <div className="hidden lg:block">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {testimonialsData.slice(0, 3).map((testimonial, index) => (
@@ -98,7 +94,6 @@ const Section3: React.FC = () => {
             ))}
           </div>
 
-          {/* Segunda linha de depoimentos */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonialsData.slice(3, 6).map((testimonial, index) => (
               <motion.div
@@ -127,7 +122,6 @@ const Section3: React.FC = () => {
           </div>
         </div>
 
-        {/* Carrossel Mobile */}
         <div className="lg:hidden">
           <div className="relative">
             <AnimatePresence mode="wait">
@@ -158,7 +152,6 @@ const Section3: React.FC = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* Controles do Carrossel */}
             <div className="flex justify-center mt-6 space-x-4">
               <button
                 onClick={prevTestimonial}
@@ -187,24 +180,20 @@ const Section3: React.FC = () => {
           </div>
         </div>
 
-    {/* CTA Section Premium */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.3 }}
-  viewport={{ once: true }}
-  className="text-center mt-16"
->
-  <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary-700 mb-4">
-    Faça Parte Dessa História
-  </h3>
-  <p className="text-gray-600 mb-8 max-w-2xl mx-auto font-sans">
-    Junte-se aos nossos pacientes satisfeitos e descubra a experiência Elleva
-  </p>
-  <Button variant="primary">
-    Agendar consulta
-  </Button>
-</motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto font-sans">
+            Junte-se aos nossos pacientes satisfeitos e descubra a experiência Elleva
+          </p>
+          <Button variant="primary">
+            Agendar consulta
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

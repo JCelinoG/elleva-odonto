@@ -8,38 +8,33 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#f0f7ff',
-          100: '#e0f0ff',
-          200: '#bae0ff',
-          300: '#7cc4ff',
-          400: '#47a3ff',
-          500: '#1e88e5', // Azul principal baseado na logo
-          600: '#0d74d1',
-          700: '#0b5aa8',
-          800: '#0e4783',
-          900: '#123a6d',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
         accent: {
-          50: '#fff5f5',
-          100: '#fed7d7',
-          200: '#feb2b2',
-          300: '#fc8181',
-          400: '#f56565',
-          500: '#e53e3e', // Vermelho coral (mantido para contraste)
-          600: '#c53030',
-          700: '#9b2c2c',
-          800: '#822727',
-          900: '#63171b',
-        },
-        luxury: {
-          gold: '#d4af37',
-          light: '#f4f4f4',
-          dark: '#2c2c2c'
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#dc2626',
+          700: '#b91c1c',
+          800: '#991b1b',
+          900: '#7f1d1d',
         }
       },
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'], // Fonte mais moderna
-        serif: ['Playfair Display', 'serif'], // Fonte para títulos luxuosos
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
       },
     },
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { whatsappInfo } from '../data/content';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -33,14 +34,14 @@ const Button: React.FC<ButtonProps> = ({
   
   const variantClasses = {
     primary: "bg-primary-600 text-white hover:bg-primary-700 border-2 border-primary-600",
-    secondary: "border-2 border-luxury-gold text-luxury-dark hover:bg-luxury-gold hover:text-white",
+    secondary: "border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white",
     accent: "bg-accent-500 text-white hover:bg-accent-600 border-2 border-accent-500"
   };
 
   const sizeClasses = {
-    sm: "px-4 py-2 text-sm rounded-lg",
-    md: "px-6 py-3 text-base rounded-lg", 
-    lg: "px-8 py-4 text-lg rounded-lg"
+    sm: "px-4 py-2 text-sm rounded-full",
+    md: "px-6 py-3 text-base rounded-full", 
+    lg: "px-8 py-4 text-lg rounded-full"
   };
 
   return (
@@ -56,10 +57,10 @@ const Button: React.FC<ButtonProps> = ({
         ${className}
       `}
     >
-      <span className="text-inherit">{children}</span>
+      <span>{children}</span>
       {withIcon && (
-        <span className={variant === 'secondary' ? 'text-inherit' : 'text-luxury-gold'}>
-          {variant === 'secondary' ? '→' : '✦'}
+        <span className={variant === 'secondary' ? '' : 'text-white'}>
+          {variant === 'secondary'}
         </span>
       )}
     </motion.button>
