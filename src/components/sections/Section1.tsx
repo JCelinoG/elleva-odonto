@@ -27,8 +27,18 @@ const Section1: React.FC = () => {
     id="areas" 
     className="min-h-screen flex items-center justify-center relative overflow-hidden pt-32 lg:pt-0"
   >
-      <div className="absolute top-10 left-10 w-20 h-20 border-l-2 border-t-2 border-primary-700 opacity-30"></div>
-      <div className="absolute bottom-10 right-10 w-16 h-16 border-r-2 border-b-2 border-primary-700 opacity-30"></div>
+      {/* Imagem mobile otimizada */}
+      <div className="absolute inset-0 lg:hidden z-0">
+        <img 
+          src="/images/0G0A3904-mobile.jpg" 
+          alt="Elleva Clínica Odontológica"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div className="absolute top-10 left-10 w-20 h-20 border-l-2 border-t-2 border-primary-700 opacity-30 z-10"></div>
+      <div className="absolute bottom-10 right-10 w-16 h-16 border-r-2 border-b-2 border-primary-700 opacity-30 z-10"></div>
       
       <div className="container mx-auto px-4 relative z-10 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -44,7 +54,7 @@ const Section1: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-800 mb-6 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white lg:text-gray-800 mb-6 leading-tight"
             >
               Onde o seu sorriso <br className="hidden lg:block" />
               encontra confiança, <br className="hidden lg:block" />
@@ -58,8 +68,8 @@ const Section1: React.FC = () => {
               viewport={{ once: true }}
               className="mb-6 relative"
             >
-              <div className="w-16 h-0.5 bg-primary-700 mx-auto lg:mx-0 mb-3"></div>
-              <h2 className="text-2xl md:text-3xl text-primary-700 font-serif font-semibold">
+              <div className="w-16 h-0.5 bg-white lg:bg-primary-700 mx-auto lg:mx-0 mb-3"></div>
+              <h2 className="text-2xl md:text-3xl text-white lg:text-primary-700 font-serif font-semibold">
                 Elleva Clínica Odontológica
               </h2>
             </motion.div>
@@ -69,7 +79,7 @@ const Section1: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed max-w-2xl font-sans"
+              className="text-lg md:text-xl text-white lg:text-gray-700 mb-8 leading-relaxed max-w-2xl font-sans"
             >
               Cuidamos da sua saúde bucal em todas as fases da sua vida, com atendimento acolhedor e resultados que transformam sua autoestima.
             </motion.p>
@@ -80,7 +90,6 @@ const Section1: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
               className="flex justify-center lg:justify-start"
-               
             >
               <Button variant="primary" center={false}>
                 Agendar consulta
@@ -88,14 +97,15 @@ const Section1: React.FC = () => {
             </motion.div>
           </motion.div>
 
+          {/* Imagem desktop */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-             className="relative mt-8 lg:mt-12"
+            className="relative mt-8 lg:mt-12 hidden lg:block"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl ">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
                 src="/images/0G0A3904.jpg" 
                 alt="Elleva Clínica Odontológica - Ambiente moderno e acolhedor"
@@ -109,7 +119,7 @@ const Section1: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
               viewport={{ once: true }}
-              className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary-7 00 rounded-lg flex items-center justify-center text-white text-2xl shadow-xl"
+              className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary-700 rounded-lg flex items-center justify-center text-white text-2xl shadow-xl"
             >
               ✦
             </motion.div>
