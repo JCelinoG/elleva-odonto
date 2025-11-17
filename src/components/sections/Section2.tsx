@@ -37,7 +37,7 @@ const Section2: React.FC = () => {
             whileInView={{ width: '100px' }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="h-1 bg-primary-500 mx-auto mb-6 rounded-full"
+            className="h-1 bg-primary-700 mx-auto mb-6 rounded-full"
           />
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
             Procedimentos Especializados

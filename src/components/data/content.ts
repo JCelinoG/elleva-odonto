@@ -112,13 +112,13 @@ export const aboutData = {
       name: 'Dr. Lucas Rodrigues',
       specialty: 'Cirurgião Dentista',
       description: 'Especialista em implantes dentários e cirurgias, com anos de experiência em tratamentos complexos.',
-      image: '/images/dr-lucas.jpg' // placeholder - você pode adicionar depois
+      image: '/images/dr-lucas.jpg' 
     },
     {
       name: 'Dra. Isadora Miranda',
       specialty: 'Dentista Estética',
       description: 'Especializada em harmonização facial e procedimentos estéticos, com abordagem humanizada.',
-      image: '/images/dra-isadora.jpg' // placeholder - você pode adicionar depois
+      image: '/images/dra-isadora.jpg'
     }
   ],
   values: [

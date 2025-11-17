@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses = "font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2";
   
   const variantClasses = {
-    primary: "bg-primary-600 text-white hover:bg-primary-700 border-2 border-primary-600",
+    primary: "bg-primary-700 text-white hover:bg-primary-700 border-2 border-primary-700",
     secondary: "border-2 border-primary-600 text-primary-500 hover:bg-primary-600 hover:text-white",
     accent: "bg-accent-300 text-white hover:bg-accent-600 border-2 border-accent-300"
   };

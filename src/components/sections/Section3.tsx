@@ -58,7 +58,7 @@ const Section3: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-500 mb-6">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-6">
             O que Nossos Pacientes Dizem
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">

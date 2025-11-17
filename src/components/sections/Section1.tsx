@@ -26,10 +26,9 @@ const Section1: React.FC = () => {
   <section 
     id="areas" 
     className="min-h-screen flex items-center justify-center relative overflow-hidden pt-32 lg:pt-0"
-    style={{ backgroundColor: '#c3c4c4' }}
   >
-      <div className="absolute top-10 left-10 w-20 h-20 border-l-2 border-t-2 border-primary-400 opacity-30"></div>
-      <div className="absolute bottom-10 right-10 w-16 h-16 border-r-2 border-b-2 border-primary-400 opacity-30"></div>
+      <div className="absolute top-10 left-10 w-20 h-20 border-l-2 border-t-2 border-primary-700 opacity-30"></div>
+      <div className="absolute bottom-10 right-10 w-16 h-16 border-r-2 border-b-2 border-primary-700 opacity-30"></div>
       
       <div className="container mx-auto px-4 relative z-10 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -48,9 +47,9 @@ const Section1: React.FC = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-800 mb-6 leading-tight"
             >
               Onde o seu sorriso encontra{' '}
-              <span className="text-primary-600">confiança</span>,{' '}
-              <span className="text-primary-600">cuidado</span> e{' '}
-              <span className="text-primary-600">carinho</span>.
+              <span>confiança</span>,{' '}
+              <span>cuidado</span> e{' '}
+              <span >carinho</span>.
             </motion.h1>
 
             <motion.div
@@ -60,8 +59,8 @@ const Section1: React.FC = () => {
               viewport={{ once: true }}
               className="mb-6 relative"
             >
-              <div className="w-16 h-0.5 bg-primary-500 mx-auto lg:mx-0 mb-3"></div>
-              <h2 className="text-2xl md:text-3xl text-primary-600 font-serif font-semibold">
+              <div className="w-16 h-0.5 bg-primary-700 mx-auto lg:mx-0 mb-3"></div>
+              <h2 className="text-2xl md:text-3xl text-primary-700 font-serif font-semibold">
                 Elleva Clínica Odontológica
               </h2>
             </motion.div>
@@ -81,9 +80,10 @@ const Section1: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex justify-center lg:justify-start"
+               
             >
-              <Button variant="primary">
+              <Button variant="primary" center={false}>
                 Agendar consulta
               </Button>
             </motion.div>
@@ -94,9 +94,9 @@ const Section1: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="relative"
+             className="relative mt-8 lg:mt-12"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl ">
               <img 
                 src="/images/0G0A3904.jpg" 
                 alt="Elleva Clínica Odontológica - Ambiente moderno e acolhedor"
@@ -110,7 +110,7 @@ const Section1: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
               viewport={{ once: true }}
-              className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary-500 rounded-lg flex items-center justify-center text-white text-2xl shadow-xl"
+              className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary-7 00 rounded-lg flex items-center justify-center text-white text-2xl shadow-xl"
             >
               ✦
             </motion.div>
@@ -126,8 +126,8 @@ const Section1: React.FC = () => {
         >
           <div className="px-8">
             <div className="text-center mb-12">
-              <div className="w-12 h-0.5 bg-primary-500 mx-auto mb-4"></div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-600 mb-4">
+              <div className="w-12 h-0.5 bg-primary-700 mx-auto mb-4"></div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
                 Áreas de Atuação
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
