@@ -98,55 +98,15 @@ const Section4: React.FC = () => {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-2xl md:text-3xl font-serif font-bold text-center text-primary-700 mb-12">
-            Nossos Valores
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {aboutData.values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                custom={index}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="bg-primary-50 rounded-2xl p-6 text-center hover:bg-primary-100 transition-all duration-300 group"
-              >
-                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {value.icon}
-                </div>
-                <h4 className="text-lg font-bold text-primary-700 mb-3 font-sans">
-                  {value.title}
-                </h4>
-                <p className="text-gray-600 text-sm leading-relaxed font-sans">
-                  {value.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+     
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center bg-primary-600 rounded-3xl p-12 text-white"
         >
-          <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-            Pronto para Começar Sua Jornada?
-          </h3>
-          <p className="text-primary-100 mb-8 max-w-2xl mx-auto font-sans">
-            Agende sua consulta e dê o primeiro passo em direção ao sorriso dos seus sonhos
-          </p>
+         
           <Button variant="primary">
             Agendar consulta
           </Button>

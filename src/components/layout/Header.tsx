@@ -7,7 +7,6 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Efeito para detectar scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -17,7 +16,6 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Fechar menu mobile ao clicar em um link
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
     const element = document.querySelector(href);
@@ -36,8 +34,7 @@ return (
     }`}
   >
     <div className="container mx-auto px-4">
-      <div className="flex justify-between items-center py-3"> {/* Reduzi o padding */}
-        {/* Logo Atualizada - apenas a imagem */}
+      <div className="flex justify-between items-center py-3">
         <motion.div
           whileHover={{ scale: 1.05 }}
           className="cursor-pointer"
@@ -46,10 +43,9 @@ return (
           <img 
             src="/images/logo-elleva2.png" 
             alt="Elleva Clínica Odontológica"
-            className="h-16 w-auto object-contain" /* Ajuste para a nova proporção */
+            className="h-16 w-auto object-contain" 
           />
         </motion.div>
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item, index) => (
               <motion.a
@@ -62,7 +58,7 @@ return (
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className="text-gray-700 hover:text-accent-300 transition-colors duration-300 font-medium relative group"
+                className="text-gray-700 hover:text-primary-700 transition-colors duration-300 font-medium relative group"
               >
                 {item.name}
                 <motion.span
@@ -73,13 +69,11 @@ return (
               </motion.a>
             ))}
             
-            {/* Botão CTA */}
               <Button variant="primary" size="md" withIcon={false} center={false}>
   Agendar Consulta
 </Button>
           </nav>
 
-          {/* Mobile Menu Button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
             className="md:hidden p-2 rounded-lg bg-primary-50 hover:bg-primary-100 transition-colors"

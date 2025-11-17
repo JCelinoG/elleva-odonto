@@ -46,10 +46,9 @@ const Section1: React.FC = () => {
               viewport={{ once: true }}
               className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-800 mb-6 leading-tight"
             >
-              Onde o seu sorriso encontra{' '}
-              <span>confiança</span>,{' '}
-              <span>cuidado</span> e{' '}
-              <span >carinho</span>.
+              Onde o seu sorriso <br className="hidden lg:block" />
+              encontra confiança, <br className="hidden lg:block" />
+              cuidado e carinho.
             </motion.h1>
 
             <motion.div

@@ -59,12 +59,7 @@ const Section2: React.FC = () => {
               className="group relative"
             >
               <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent group-hover:border-primary-200 relative overflow-hidden">
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center text-2xl text-white shadow-lg mb-6 mx-auto group-hover:bg-primary-700 transition-all duration-300 relative z-10"
-                >
-                  {procedure.icon}
-                </motion.div>
+               
                 
                 <div className="text-center relative z-10">
                   <h3 className="text-xl font-serif font-bold text-primary-800 mb-4 group-hover:text-primary-700 transition-colors duration-300">

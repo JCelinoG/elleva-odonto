@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                 >
                   <a
                     href={link.href}
-                    className="text-primary-200 hover:text-accent-400 transition-colors duration-300 flex items-center space-x-2 group"
+                    className="text-primary-200 hover:text-accent-100 transition-colors duration-300 flex items-center space-x-2 group"
                   >
                     <span>{link.name}</span>
                   </a>
@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold mb-6 text-white">Horário de Atendimento</h3>
             <div className="space-y-3 text-primary-200">
               <div className="flex items-start space-x-3">
-                <span className="text-accent-400">🕒</span>
+                <span className="'text-accent-100'">🕒</span>
                 <div>
                   <p className="font-medium">{footerData.hours.weekdays}</p>
                   <p className="text-sm">{footerData.hours.saturday}</p>
@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
                 whileHover={{ x: 5 }}
                 className="flex items-start space-x-3 text-primary-200 cursor-pointer group"
               >
-                <span className="text-accent-400 mt-1">📍</span>
+                <span className="text-accent-100 mt-1">📍</span>
                 <div>
                   <a 
                     href="https://maps.google.com/?q=Quadra ARSO 41, Av. LO-9, 30 - SL.03"
@@ -150,7 +150,7 @@ const Footer: React.FC = () => {
                 onClick={handlePhoneClick}
                 className="flex items-center space-x-3 text-primary-200 hover:text-white transition-colors duration-300 w-full text-left group"
               >
-                <span className="text-accent-400">📞</span>
+                <span className="text-accent-100">📞</span>
                 <span className="group-hover:text-white">{footerData.contact.phone}</span>
               </motion.button>
 
@@ -159,7 +159,7 @@ const Footer: React.FC = () => {
                 onClick={handleEmailClick}
                 className="flex items-center space-x-3 text-primary-200 hover:text-white transition-colors duration-300 w-full text-left group"
               >
-                <span className="text-accent-400">✉️</span>
+                <span className="text-accent-100">✉️</span>
                 <span className="group-hover:text-white">{footerData.contact.email}</span>
               </motion.button>
 
@@ -186,10 +186,10 @@ const Footer: React.FC = () => {
           </p>
             {/*
             <div className="flex space-x-6 text-sm text-primary-300">
-              <a href="#" className="hover:text-accent-400 transition-colors duration-300">
+              <a href="#" className="hover:text-accent-100 transition-colors duration-300">
                 Política de Privacidade
               </a>
-              <a href="#" className="hover:text-accent-400 transition-colors duration-300">
+              <a href="#" className="hover:text-accent-100 transition-colors duration-300">
                 Termos de Uso
               </a>
             </div>*/}
