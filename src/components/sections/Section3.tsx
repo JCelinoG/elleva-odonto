@@ -12,7 +12,6 @@ const Section3: React.FC = () => {
     window.open(url, '_blank');
   };
 
-  // Array com os paths das imagens das avaliações
   const avaliacoes = Array.from({ length: 9 }, (_, i) => 
     `/images/avaliacoes/avaliacao${i + 1}.png`
   );
@@ -29,7 +28,6 @@ const Section3: React.FC = () => {
     );
   };
 
-  // Auto-play
   useEffect(() => {
     if (!isAutoPlaying) return;
 
@@ -51,7 +49,6 @@ const Section3: React.FC = () => {
     visible: { opacity: 1, scale: 1 }
   };
 
-  // Para desktop: mostra 3 imagens por vez
   const getVisibleSlides = () => {
     const slides = [];
     for (let i = 0; i < 3; i++) {
@@ -84,7 +81,6 @@ const Section3: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Desktop - Carrossel com 3 imagens */}
         <div className="hidden lg:block">
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -111,7 +107,6 @@ const Section3: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            {/* Controles Desktop */}
             <div className="flex justify-center mt-8 space-x-4">
               <button
                 onClick={prevSlide}
@@ -140,7 +135,6 @@ const Section3: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile - Carrossel com 1 imagem */}
         <div className="lg:hidden">
           <div className="relative max-w-lg mx-auto">
             <AnimatePresence mode="wait">
@@ -163,7 +157,6 @@ const Section3: React.FC = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* Controles Mobile */}
             <div className="flex justify-center mt-6 space-x-4">
               <button
                 onClick={prevSlide}

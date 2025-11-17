@@ -21,7 +21,6 @@ body {
 }
 
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -39,25 +38,21 @@ body {
   background: #a8a8a8;
 }
 
-/* Garantir que as seções tenham padding para o header fixo */
 section {
   scroll-margin-top: 80px;
 }
 
-/* Ajustes para mobile - Header e Seção 1 */
 @media (max-width: 768px) {
   section {
-    scroll-margin-top: 70px; /* Ajuste para mobile */
+    scroll-margin-top: 70px; 
   }
   
-  /* Garantir que a seção 1 tenha espaço suficiente no mobile */
   #areas {
     padding-top: 80px;
     min-height: calc(100vh - 80px);
   }
 }
 
-/* Melhorias para telas muito pequenas */
 @media (max-width: 480px) {
   .container {
     padding-left: 1rem;
