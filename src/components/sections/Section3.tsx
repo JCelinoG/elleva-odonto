@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { testimonialsData, whatsappInfo } from '../data/content';
 import Button from '../ui/Button';
 
 const Section3: React.FC = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const handleWhatsAppClick = () => {
     const url = `https://wa.me/${whatsappInfo.phone}?text=${encodeURIComponent(whatsappInfo.message)}`;
@@ -23,10 +24,26 @@ const Section3: React.FC = () => {
     );
   };
 
+  // Auto-play
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    const interval = setInterval(() => {
+      nextTestimonial();
+    }, 5000); // Muda a cada 5 segundos
+
+    return () => clearInterval(interval);
+  }, [currentTestimonial, isAutoPlaying]);
+
   const cardVariants = {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: -50 }
+  };
+
+  const desktopCardVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 }
   };
 
   const renderStars = (rating: number) => {
@@ -48,8 +65,23 @@ const Section3: React.FC = () => {
     );
   };
 
+  // Para desktop: mostra 3 depoimentos por vez
+  const getVisibleTestimonials = () => {
+    const testimonials = [];
+    for (let i = 0; i < 3; i++) {
+      const index = (currentTestimonial + i) % testimonialsData.length;
+      testimonials.push(testimonialsData[index]);
+    }
+    return testimonials;
+  };
+
   return (
-    <section id="depoimentos" className="py-20 bg-gradient-to-br from-primary-50 to-white">
+    <section 
+      id="depoimentos" 
+      className="py-20 bg-gradient-to-br from-primary-50 to-white"
+      onMouseEnter={() => setIsAutoPlaying(false)}
+      onMouseLeave={() => setIsAutoPlaying(true)}
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -66,62 +98,69 @@ const Section3: React.FC = () => {
           </p>
         </motion.div>
 
+        {/* Desktop - Carrossel com 3 cards */}
         <div className="hidden lg:block">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {testimonialsData.slice(0, 3).map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              >
-                {renderStars(testimonial.rating)}
-                <p className="text-gray-600 mb-6 leading-relaxed italic">
-                  "{testimonial.comment}"
-                </p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="font-semibold text-primary-700">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">
-                      {new Date(testimonial.date).toLocaleDateString('pt-BR')}
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <AnimatePresence mode="wait">
+                {getVisibleTestimonials().map((testimonial, index) => (
+                  <motion.div
+                    key={`${testimonial.id}-${currentTestimonial}`}
+                    variants={desktopCardVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  >
+                    {renderStars(testimonial.rating)}
+                    <p className="text-gray-600 mb-6 leading-relaxed italic">
+                      "{testimonial.comment}"
                     </p>
-                  </div>
-                  <div className="text-2xl">😊</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h4 className="font-semibold text-primary-700">{testimonial.name}</h4>
+                        <p className="text-sm text-gray-500">
+                          {new Date(testimonial.date).toLocaleDateString('pt-BR')}
+                        </p>
+                      </div>
+                      <div className="text-2xl">😊</div>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonialsData.slice(3, 6).map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: (index + 3) * 0.2, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+            {/* Controles Desktop */}
+            <div className="flex justify-center mt-8 space-x-4">
+              <button
+                onClick={prevTestimonial}
+                className="p-3 rounded-full bg-primary-700 text-white hover:bg-primary-600 transition-colors shadow-lg"
               >
-                {renderStars(testimonial.rating)}
-                <p className="text-gray-600 mb-6 leading-relaxed italic">
-                  "{testimonial.comment}"
-                </p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="font-semibold text-primary-700">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">
-                      {new Date(testimonial.date).toLocaleDateString('pt-BR')}
-                    </p>
-                  </div>
-                  <div className="text-2xl">⭐</div>
-                </div>
-              </motion.div>
-            ))}
+                ‹
+              </button>
+              <div className="flex items-center space-x-2">
+                {testimonialsData.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentTestimonial(index)}
+                    className={`w-3 h-3 rounded-full transition-colors ${
+                      index === currentTestimonial ? 'bg-primary-700' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={nextTestimonial}
+                className="p-3 rounded-full bg-primary-700 text-white hover:bg-primary-600 transition-colors shadow-lg"
+              >
+                ›
+              </button>
+            </div>
           </div>
         </div>
 
+        {/* Mobile - Carrossel com 1 card */}
         <div className="lg:hidden">
           <div className="relative">
             <AnimatePresence mode="wait">
@@ -152,10 +191,11 @@ const Section3: React.FC = () => {
               </motion.div>
             </AnimatePresence>
 
+            {/* Controles Mobile */}
             <div className="flex justify-center mt-6 space-x-4">
               <button
                 onClick={prevTestimonial}
-                className="p-2 rounded-full bg-primary-500 text-white hover:bg-primary-600 transition-colors"
+                className="p-3 rounded-full bg-primary-500 text-white hover:bg-primary-600 transition-colors shadow-lg"
               >
                 ‹
               </button>
@@ -172,7 +212,7 @@ const Section3: React.FC = () => {
               </div>
               <button
                 onClick={nextTestimonial}
-                className="p-2 rounded-full bg-primary-500 text-white hover:bg-primary-600 transition-colors"
+                className="p-3 rounded-full bg-primary-500 text-white hover:bg-primary-600 transition-colors shadow-lg"
               >
                 ›
               </button>
