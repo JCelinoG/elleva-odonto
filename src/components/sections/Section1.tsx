@@ -10,10 +10,9 @@ const Section1: React.FC = () => {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0 }, // Removido y: 20
     visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
+      opacity: 1, // Removido y: 0
       transition: {
         delay: i * 0.1,
         duration: 0.6,
@@ -110,7 +109,7 @@ const Section1: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
               viewport={{ once: true }}
-              className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary-7 00 rounded-lg flex items-center justify-center text-white text-2xl shadow-xl"
+              className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary-700 rounded-lg flex items-center justify-center text-white text-2xl shadow-xl"
             >
               ✦
             </motion.div>

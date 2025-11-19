@@ -110,14 +110,14 @@ export const aboutData = {
   dentists: [
     {
       name: 'Dr. Lucas Rodrigues',
-      specialty: 'Cirurgião Dentista',
-      description: 'Especialista em implantes dentários e cirurgias, com anos de experiência em tratamentos complexos.',
+      specialty: 'Cirurgião-Dentista – Especialista em Endodontia',
+      description: 'Atua há mais de 2 anos no tratamento de canais dentários, com experiência em casos complexos e foco em preservar dentes com segurança, precisão e cuidado.',
       image: '/images/dr-lucas.jpg' 
     },
     {
       name: 'Dra. Isadora Miranda',
-      specialty: 'Dentista Estética',
-      description: 'Especializada em harmonização facial e procedimentos estéticos, com abordagem humanizada.',
+      specialty: 'Cirurgiã-Dentista – Especialista em Implantodontia e Harmonização Facial',
+      description: 'Com 5 anos de experiência, é referência em implantes dentários e cirurgias orais. Une conhecimento técnico e olhar estético para oferecer tratamentos completos em saúde e beleza facial.',
       image: '/images/dra-isadora.jpg'
     }
   ],
