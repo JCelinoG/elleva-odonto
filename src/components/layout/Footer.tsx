@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       >
                         <img 
-                          src="/images/logo-elleva3.jpeg" 
+                          src="/images/logo-elleva3.png" 
                           alt="Elleva Clínica Odontológica"
                           className="h-10 w-auto object-contain" 
                         />
